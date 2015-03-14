@@ -1,0 +1,246 @@
+//문자열을 표현하는 법
+'문자열'
+"문자열"
+"string" 
+'문\'자열' //작은 따옴표를(Escape) 한 문자열.
+"문'자열"
+console.log('문\\자열');
+console.log('문\n자열');
+console.log('문\r자열');
+console.log('문\t자열');
+// \n 줄바꿈(newline)
+// \r 캐리지 리턴(carriage return)
+// \t 탭(tab)
+
+// 숫자를 표현하는 법
+100
+100.5
+100.6789
+0.6
+.6 // 정수부가 0일 때는 생략 가능하다.
+012 // 8진법 표현. 숫자 제일 앞에 0을 둔다
+0x12 // 16진법 표현. 숫자 앞에 0x를 둔다.
+console.log(0x12);
+
+//오래된 브라우저에서 문제가 발생하는 것을 막기 위해 
+//parseInt 두번째 인수에는 진법을 명시적으로 표시한다.
+parseInt('012', 10);
+//두 번째 인수를 사용하면 16진수를 10진법으로 변환할 수 있다.
+//문제: c5f는 10진수로 얼마일까?
+var a = parseInt('c5f', 16);
+console.log(a);
+
+//숫자를 다른 진법으로 변환할 때는 tostring 메소드를 사용한다.
+var b = (35).toString(16); // 10 진수 35를 16진법으로 변환하면?
+35.0.toString(16); // 명시적으로 소숫점 자리를 추가하면 문제 해결.
+35..toString(16); // 소숫점자리 0은 생략 가능.
+console.log(b);
+
+// 배열
+var fruits = ['Apple', 'Banana', 'Cherry'];
+console.log(fruits);
+console.log(fruits[0]); // 배열 이름 뒤에 여는 대괄호, 인덱스 번호, 닫는 대괄호를 입력하면 배열이 원소에 접근할 수 있다.
+// 문제: 배열 fruits를 사용해 콘솔에 Cherry를 출력해봅시다.
+console.log(fruits[2]);
+// 없는 인덱스 번호를 출력하면 undefined가 출력된다.
+console.log(fruits[10]);
+
+// 배열에 값을 추가할 때는
+fruits[3] = 'Mango';
+console.log(fruits[3]);
+
+// 중간 인덱스를 건너뛰고 저장하면 undefined가 저장된다.
+fruits[5] = 'Tomato';
+//console.log(fruits[5]);
+console.log(fruits[4]);
+console.log(fruits);
+
+// 객체
+var obj = {
+    name: '김태곤',
+    'age': 36,
+};
+console.log(obj);
+
+// 문제: 자신을 기술하는 person 변수를 작성해보자.
+var 내주소 = '경기도 군포시';
+var person = {
+    name: '권영철',
+    'age': '34살',
+    '자녀': '2명',
+    phone: '010-4522-8103',
+    주소: 내주소
+};
+console.log(person);
+console.log(person.자녀);
+console.log(person.주소);
+
+// 객체 프로퍼티의 접근법-1 - 각괄호 표기법
+obj['name'];
+
+// 객체 프로퍼티의 접근법-2 - 점 문법
+// 단, 프로퍼티의 이름이 변수 이름 규칙을 따르고 있는 경우에만 가능.
+obj.name;
+
+// 함수
+// 함수 만드는 방법-1 - 선언식
+function 라면요리( 라면종류, 물의양 ) {
+    //여기에 동작할 코드 
+    console.log(라면종류 + ', ' + 물의양 + 'ml ' + '라면완성');
+}
+라면요리('신라면', 400);
+
+// 함수를 실행할 때 전달받는 값을 가리켜 인수(argument)라고 한다.
+function hello (name){
+    console.log('안녕하세요, ' + name + '님');
+}
+hello('김태곤');
+
+// return 키워드를 사용하면 함수 안의 값을 밖으로 반환(또는 리턴)한다.
+function 더하기(num1 , num2) {
+    return num1 + num2;
+} 
+var num = 더하기(3, 5); //8 
+console.log(num);
+
+// 문제: 전달한 숫자를 제곱한 값을 반환하는 함수 제곱()을 작성하라
+
+function 제곱(num1){
+    return num1 * num1;
+}
+var num = 제곱(7);
+console.log(num);
+
+// 자바스크립트에서는 함수도 하나의 값이다.
+var squared = 제곱;
+console.log(squared(5));
+
+// 함수 만드는 방법-2 - 표현식
+var fn = function (n) {
+    return n * n ;
+}
+fn(7);
+
+(function (n) {
+    return n * n ;
+})(8);
+
+//var 변수 = 1;
+// 변수의 스코프(scope) = 유효범위
+// 호이스팅(hoisting) : 함수가
+function 함수() { 
+    안쪽함수();
+    console.log(변수);
+    
+    var 변수 = 1;
+    변수 = 변수 +1;
+    
+    function 안쪽함수() {
+        console.log('안쪽함');
+    }
+    
+    안쪽함수();
+}
+//함수();
+
+var car = {
+    color: 'silver',
+    start: function() {
+        console.log('부릉');
+    }
+}
+car.start();
+//car.color();
+
+// 문자열의 프로퍼티와 메소드
+var str = '동해물과 백두산이 마르고 닳도록 백두산아';
+// 몇 글자?
+console.log(str.length);
+// 특정 문자열을 포함하고 있나?
+var idx = str.indexOf('없다');
+console.log(idx.length);
+// 뒤에서부터 찾는다면
+var idx = str.lastIndexOf('백두산');
+console.log(idx);
+// 문자열 자르기 - substr(시작위치, 길이)
+var 새문자열 = str.substr(0, 7);
+// 문제: str에서 "백두산이"만 잘라내는 코드를 작성하라
+var 백두산이 = str.substr(5, 4);
+var 백두산이 = str.substr(5);
+console.log(백두산이);
+// 문자열 자르기 - substring(시작위치, 끝위치)
+var 백두산 = str.substring(5, 8);
+console.log(백두산);
+
+// 숫자의 메소드
+var num = 1234.555;
+/// 소수점 아래 자리수를 맞추는 toFixed. 넘는 자리는 반올림. 모자라는 자리는 0으로 채움.
+var t = num.toFixed(2);
+console.log(t);
+
+// 배열의 메소드
+var fruits = ['Apple', 'Banana', 'Cherry'];
+// 배열의 원소 개수
+console.log(fruits.length);
+// 배열에 원소를 추가하는 방법1
+fruits[fruits.length] = 'Mango';
+console.log(fruits);
+// 배열에 원소를 추가하는 방법1
+fruits.push('Tango', 'Jango', 'Kongo');
+console.log(fruits);
+// 한 문자열로 만들어 준다.
+var t = fruits.join(' + ');
+console.log(t);
+var t = fruits.join();
+console.log(t);
+
+// 문제: 배열에 포함된 원소 갯수를 알아내서 반환하는 함수 arraySize()
+var 배열 = ['엄마', '아빠', '오윤', '오연'];
+function arraySize(배열){ 
+    return 배열.length;
+} 
+var 배열의크기 = arraySize(배열);
+console.log(배열의크기);
+
+// 문제: 배열 첫 번째 원소릐 값을 반환하는 arrayFirst() 함수를 작성하라.
+var 첫번째원소 = arrayFirst(['엄마','아빠','아들']);
+
+function arrayFirst(배열){ 
+    return 배열[0];
+}
+console.log(첫번째원소);
+
+// 문제: 배열 마지막 원소의 값을 반환하는 arrayLast() 함수를 작성하라.
+function arrayLast(배열){ 
+    return 배열[배열.length-1];
+}
+
+var 마지막원소 = arrayLast(['엄마','아빠','아들']);
+console.log(마지막원소);
+var 마지막원소 = arrayLast(['엄마','아빠']);
+console.log(마지막원소);
+var 마지막원소 = arrayLast(['엄마']);
+console.log(마지막원소);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
