@@ -15,6 +15,7 @@ var str1 = 'Hello', str2 = 'World';
 
 // 자바스크립트의 원시(primitive) 타입(혹은 자료형)
 var str = '문자열'; // 문자열(String). 따옴표 또는 작은 따옴표로 감싼다.
+var str = "문자열";
 var num = 100; // 숫자(Number). 정수 또는 실수 값
 var num = 100.5;
 var boo = true; // 불리언(Boolean). true 또는 false만 가질 수 있다.
