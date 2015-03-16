@@ -30,11 +30,13 @@
 	// 답2(arr);
 	// console.log(arr); // arr의 값은 ['하나', '둘', '셋', '번호 끝'];
 
-        function arrayAddEnd(array) {
-            array.push('번호 끝');
-            return array;
+        var arr = ['하나', '둘', '셋'];
+        
+        function arrayAddEnd() {
+            arr.push('번호 끝');
         }
-        console.log(arrayAddEnd(['하나', '둘', '셋']));
+        arrayAddEnd();
+        console.log(arr);
         
 	// 문제3: 다음과 같이 나열된 숫자에서 첫 번째와 두 번째 값을 인수로 전달하면
 	// 세 번째 값을 반환하는 함수 답3()이 있다. 예를 들어, 답3(4, 2)의 값은 0이고 답3(5, 3)의 값은 2이다.
