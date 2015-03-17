@@ -88,11 +88,20 @@
 	// 셋
         
         function 답5(arr) { 
-            console.log(arr[0]);
-            console.log(arr[1]);
-            console.log(arr[2]);
+            var result = "";
+
+            for(var i in arr)
+            {
+                result += arr[i];
+                
+                if(arr.length - 1 > i)
+                {     
+                    result += '\n'; 
+                }
+            }
+            console.log(result);
         }
-        답5(['하나','둘','셋']);
+        답5(['하나', '둘', '셋']);
         
 	</script>
 </head>

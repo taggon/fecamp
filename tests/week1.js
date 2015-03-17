@@ -46,14 +46,19 @@ QUnit.test('답5 확인', function(assert){
 	];
 
 	var log = console.log, result;
-	console.log = function(str) {
+    
+	console.log = function(str)
+    {
 		result = str+'';
 		log.apply(console, arguments);
 	};
+    
 	arrays.forEach(function(arr){
 		var answer = arr.join('\n');
 		답5(arr);
+
 		assert.equal(result, answer, '출력된 결과가 올바르지 않습니다.');
 	});
+    
 	console.log = log;
 });
