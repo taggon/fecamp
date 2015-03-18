@@ -87,19 +87,25 @@
 	// 둘
 	// 셋
         
-        function 답5(arr) { 
-            var result = "";
-
-            for(var i in arr) 
-            {
-                result += arr[i];
-                
-                if(arr.length - 1 > i) 
-                {     
-                    result += '\n'; 
-                }
-            }
-            console.log(result);
+//            강사 의도
+        function 답5(arr) {
+            console.log( arr.join('\n') );
+        }
+        답5(['하나', '둘', '셋']);
+        
+//        function 답5(arr) {  
+//            var result = "";
+//
+//            for(var i in arr) 
+//            {
+//                result += arr[i];
+//                
+//                if(arr.length - 1 > i) 
+//                {     
+//                    result += '\n'; 
+//                }
+//            }
+//            console.log(result);
             
 /*
             console.log(arr[0]);
@@ -117,10 +123,8 @@
                 arr += '\n';
                 console.log(result);
             });
-*/
-        
-        }
-        답5(['하나', '둘', '셋']);
+*/ 
+//        }
         
 	</script>
 </head>
