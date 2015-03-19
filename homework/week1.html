@@ -17,12 +17,25 @@
 	// 문제1: 숫자를 인수로 전달하면 세제곱 값을 반환하는 세제곱() 함수를 작성하라.
 	// 사용 예1: var num = 세제곱(3); // num의 값은 27
 	// 사용 예2: var num = 세제곱(5); // num의 값은 125
-
+        function 세제곱(n) {
+            if(isNaN(n)) {
+                throw 'Input must be a number';
+            }
+            return n * n * n;
+        }
+        
+        
 	// 문제2: 배열을 인수로 전달하면 배열 가장 마지막에 '번호 끝'을 추가하는 함수 답2()를 작성하라.
 	// 사용 예:
 	// var arr = ['하나', '둘', '셋'];
-	// 답2(arr);
+    // 답2(arr);
 	// console.log(arr); // arr의 값은 ['하나', '둘', '셋', '번호 끝'];
+        function 답2(arr) {
+            if (typeof arr != 'object') {
+                throw 'Input must be an array';
+            }
+            arr.push('번호 끝');
+        }
 
 	// 문제3: 다음과 같이 나열된 숫자에서 첫 번째와 두 번째 값을 인수로 전달하면
 	// 세 번째 값을 반환하는 함수 답3()이 있다. 예를 들어, 답3(4, 2)의 값은 0이고 답3(5, 3)의 값은 2이다.
@@ -37,17 +50,36 @@
 	// 5, 4, 1
 	// 100, 3, 1
 	// 100, 25, 0
+        function 답3(a, b) {
+            if (isNaN(a) || isNaN(b)) {
+                throw 'Inputs must be numbers';
+            }
+            return a % b;
+        }
 
 	// 문제4: 문자열이나 숫자, 불리언 값을 인수로 전달하면 전달한 값이 어떤 타입인지 알려주는 함수 답4()를 작성하라.
 	// 사용 예1: var 타입 = 답4('문자열'); // 타입 변수의 값은 "string"
 	// 사용 예2: var 타입 = 답4(3.5); // 타입 변수의 값은 "number"
-
+        function 답4(n) {
+            return typeof n;
+        }
+        
+        
 	// 문제5: 다음과 같이 배열을 전달하면 배열 안에 있는 값을 한 줄에 하나씩 출력하는 함수 답5()를 작성하라.
 	// 사용 예: 답5(['하나','둘','셋']);
 	// 출력 예:
 	// 하나
 	// 둘
 	// 셋
+        function 답5(arr) {
+            if (typeof arr != 'object') {
+                throw 'Input must be an array';
+            }
+            arr.forEach(function(v, k, arr){
+                console.log(v);
+                document.writeln(v);
+            });
+        }
 	</script>
 </head>
 <body>
