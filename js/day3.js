@@ -25,10 +25,13 @@ var person = {
 var shin = {
 	name : '신승엽'
 };
+var teachers = [person, shin];
 shin.sayName = person.sayName;
 
 person.sayName();
 shin.sayName();
+
+teachers[0].sayName();
 
 // 문제: 다음 함수를 작성하여 결과를 완성하라.
 function fn() {
@@ -51,11 +54,13 @@ console.log( rect2.getArea() );  // 200
 
 
 
-// 익명(anonymous) 함수
-function fn() {
-
+// 이름이 있는 함수
+function fn1() {
+	console.log(arguments.callee);
 }
-var fn = function () {
+fn1();
+// 익명(anonymous) 함수
+var fn2 = function () {
 
 };
 (function(str){
@@ -73,7 +78,8 @@ function 오초뒤() {
 }
 //setTimeout(오초뒤, 5000);
 // "전역 함수라면" 함수 이름을 문자열로 전달할 수도 있다. (권장안함)
-//setTimeout('오초뒤', 5000);
+//setTimeout('오초뒤()', 5000);
+//setTimeout(function(){ 오초뒤(); }, 5000);
 
 
 
