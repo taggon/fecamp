@@ -48,14 +48,16 @@ QUnit.test('답3 확인', function(assert){
 QUnit.test('답4 확인', function(assert){
 	assert.equal(typeof formatDate, 'function', 'formatDate() 함수를 선언해야 합니다.');
 
-	var min = 0, max = new Date(2016, 12, 31).getTime(), theDate, y, m, d, formatStr;
+	var min = 0, max = new Date(2016, 12, 31).getTime(), theDate, y, m, d, w, formatStr;
 
 	for (var i=0; i < 100; i++) {
 		theDate = new Date(rand(min, max));
 		y = theDate.getFullYear();
 		m = theDate.getMonth() + 1;
 		d = theDate.getDate();
-		formatStr = y + '년 ' + m + '월 ' +  d + '일';
+		w = '일월화수목금토'.substr(theDate.getDay(), 1);
+
+		formatStr = y + '년 ' + m + '월 ' +  d + '일 ' + w + '요일';
 		assert.equal(formatDate(theDate), formatStr, 'formatStr에서 반환하는 값은  "'+formatStr+'"이어야 합니다.');
 	}
 });
