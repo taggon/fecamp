@@ -37,13 +37,13 @@ QUnit.test('답3 확인', function(assert){
 		if (i % 17 === 0) max = min = i;
 		if (min === max) max++;
 		r = randomFloat(min, max);
-		assert.ok((typeof r == 'number') && min <= r && r <= max, 'randomFloat('+min+', '+max+')의 값은 '+min+'과 '+max+' 사이의 실수여야 합니다.');
-
-		if (Math.floor(r) < r) {
-			floatAppeared = true;
-		}
+		assert.ok(isFloat(r,1) && min <= r && r <= max, 'randomFloat('+min+', '+max+')의 값은 '+min+'과 '+max+' 사이의 소숫점 첫째자리 실수여야 합니다. 현재값 : ' + r);
 	}
-	assert.ok(floatAppeared, 'randomFloat 함수는 실수를 반환해야 합니다.');
+
+	function isFloat(n,a) {
+		if (typeof n !== 'number') return false;
+		return (Math.floor(n*Math.pow(10,a))/Math.pow(10,a) === n);
+	}
 });
 QUnit.test('답4 확인', function(assert){
 	assert.equal(typeof formatDate, 'function', 'formatDate() 함수를 선언해야 합니다.');
