@@ -33,13 +33,13 @@ var startDate = new Date(2015, 1, 5);
 var nowDate = new Date();
 var 시간차 = nowDate.getTime() - startDate.getTime();
 var 며칠째 = Math.ceil(시간차/1000/60/60/24);
+//console.log(date);
 
 // 문제: 첫 번째 인수에 주어진 날짜로부터 두 번째 인수에 주어진 날짜가
 // 며칠째인지 숫자로 반환하는 함수 diffDate를 작성하라.
 function diffDate(firstArr, secondArr) {
 	var firstDate = new Date(firstArr[0], firstArr[1]-1, firstArr[2]);
 	var secondDate = new Date(secondArr[0], secondArr[1]-1, secondArr[2], 1); // 올림할 값을 만들기 위해 1시간 추가
-
 	var diffTime = secondDate.getTime() - firstDate.getTime();
 	return Math.ceil(diffTime/1000/60/60/24);
 }
