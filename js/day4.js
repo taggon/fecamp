@@ -71,9 +71,9 @@ var now = date.getTime();
 function 요일(연, 월, 일) {
 	var date = new Date(연, 월-1, 일);
 	var day = date.getDay();
-	//var dayNames = ['일','월','화','수','목','금','토'];
-
-	return '일월화수목금토'.substr(day,1);
+	var dayNames = ['일','월','화','수','목','금','토'];
+    return dayNames[day];
+	//return '일월화수목금토'.substr(day,1);
 }
 var 무슨요일 = 요일(2015, 3, 13);
 console.log('2015년 3월 13일은 ' + 무슨요일 + '요일입니다.');

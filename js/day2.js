@@ -161,7 +161,8 @@ var 백두산 = str.substring(5, 8);
 // 숫자의 메소드
 var num = 1234.555;
 // 소수점 아래 자리수를 맞추는 toFixed. 넘는 자리는 반올림. 모자라는 자리는 0으로 채움.
-num.toFixed(2);
+num.toFixed(1);
+console.log(num.toFixed(1));
 
 // 배열의 메소드
 var fruits = ['Apple', 'Banana', 'Cherry'];
