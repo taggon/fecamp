@@ -13,7 +13,7 @@ function rand(min, max) {
 	return Math.round(Math.random() * (max-min)) + min;
 }
 
-QUnit.module('1주차');
+QUnit.module('2주차');
 QUnit.test('답1 확인', function(assert){
 	assert.equal(typeof tick, 'function', 'tick() 함수를 선언해야 합니다.');
 });
