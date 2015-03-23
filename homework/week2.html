@@ -59,8 +59,14 @@
 	// 태어난 날을 1일로 센다.
 	// 사용예: console.log( lifeTime(1980, 2, 13) );
 	// 힌트: 테스트 할 때는 어제나 2일 전 등 가까운 날짜를 입력한 후 테스트 해보는 것이 편합니다.
-
-
+        function lifeTime(연, 월, 일){
+            var start = new Date(연, 월-1, 일);
+            var now = new Date();
+            var myday = now.getTime() - start.getTime();
+            return Math.ceil(myday/1000/60/60/24)
+        }
+        console.log('오늘은 기준일부터\t'+ lifeTime(2015, 3, 20)+ '일째 입니다.' );
+        console.log('오늘은 기준일부터\t'+ lifeTime(1985, 9, 20)+ '일째 입니다.' );
 	// 문제6: 인수로 전달된 시각까지 앞으로 남은 시간을 "1시간 10분 35초"처럼 1초마다 카운트다운하며
 	// 표시하는 countDown() 함수를 작성하라(실행 예는 https://youtu.be/-cdVk4KMPXw 참고).
 	// 힌트1: 문자열 표시는 console.log와 사용법이 똑같은 log() 함수를 사용해 출력하면 된다.
