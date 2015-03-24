@@ -99,39 +99,21 @@
 		var endDate = new Date(연,월-1,일,시);
 		var nowDate = new Date();
 		
-		var 시간차 = endDate.getTime()-nowDate.getTime();
-		var Hours = 시간차.getHours();
-		var Min = 시간차.getMinutes();
-		var Sec = 시간차.getSeconds();
-		//setTimeText(nowDate);
-		setTimeout(arguments.callee,1000);
-
-		return Hours+'시 '+Min+'분 '+Sec+'초';
-
-
-	}
-
-	countDown(2015, 3, 25, 1); 
-
-
-
-
-	function countDown(연,월,일,시) {
-		// body...
-		
-		var endDate = new Date(연,월-1,일,시);
-		var date = new Date();
-		
-		var num = endDate-date;
+		var num = endDate.getTime()-nowDate.getTime();
 		var 시간차 = new Date(num);
+
 		var Hours = 시간차.getHours()-9;
 		var Min = 시간차.getMinutes();
 		var Sec = 시간차.getSeconds();
-		setTimeout(arguments.callee,1000); 
+		//setTimeText(nowDate);
+		//setTimeout(arguments.callee,1000);
+
 		return Hours+'시 '+Min+'분 '+Sec+'초';
+
+
 	}
 
-	countDown(2015, 3, 25, 2); 
+	countDown(2015, 3, 25, 5); 
 
 
 
