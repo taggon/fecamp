@@ -8,3 +8,12 @@ h2 {
 	border-bottom: 2px solid #ccc;
 	padding-bottom: .5em;
 }
+
+figure > img {
+	border: 0;
+	max-width: 100%;
+}
+
+figurecaption {
+	display: block;
+}
