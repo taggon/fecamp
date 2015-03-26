@@ -18,9 +18,10 @@
 
 	function tick (argument) {
 		// body...
+		setTimeout(tick, 1000);
 		console.log('틱');
 	}
-	setTimeout(tick, 1000);
+	tick();
 
 
 
