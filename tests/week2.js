@@ -1,5 +1,5 @@
-if (typeof showTimer === 'function') {
-	window.onload = showTimer;
+if (typeof countDown === 'function') {
+	window.onload = function(){ countDown(2015, 3, 28, 9); };
 }
 
 function log(text) {
