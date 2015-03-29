@@ -16,14 +16,39 @@
 
 	// 문제1: 1초마다 한번씩 '틱'이라는 글자를 콘솔에 출력하는 함수 tick()을 작성하라.
 
+	function tick (argument) {
+		// body...
+		setTimeout(tick, 1000);
+		console.log('틱');
+	}
+	tick();
+
+
+
 	// 문제2: 수학 관련 계산을 담당하는 Math 객체에는 원주율을 나타내는 Math.PI라는 값이 있다.
 	// 반지름 값 r을 입력할 때 원의 넓이를 반환하는 함수 circleArea() 함수를 작성하라.
 	// 힌트: 원의 넓이 = 반지름의_제곱 * 원주율
 	// 사용예: console.log(circleArea(5)); // 78.539816...
 
+	function circleArea (radius) {
+		return Math.pow(radius,2) * Math.PI
+	}
+	console.log(circleArea(5)); 
+
+
 	// 문제3: 최솟값과 최댓값을 입력하면 그 사이의 랜덤한 숫자를 "소숫점 첫째자리"까지 반환하는
 	// 함수 randomFloat() 함수를 작성하라.
 	// 사용예: randomFloat(5, 10); // 5.3 또는 6.7 또는 7.8 또는 9.5
+
+	function randomFloat (min,max) {
+		// body...
+		var rand = Math.random();
+		rand = rand * (max-min)+min;
+
+		return Math.round(rand*10)/10;
+	}
+
+	randomFloat(5,10);
 
 	// 문제4: Date 객체를 전달하면 "2015년 3월 21일 토요일"과 같이 날짜 문자열을 반환하는
 	// formatDate() 함수를 작성하라.
@@ -31,10 +56,36 @@
 	// var date = new Date(1426863600000);
 	// console.log(formatDate(date)); // 출력 결과: 2015년 3월 21일 토요일
 
+	function formatDate (date) {
+		// body...
+		var date = new Date(date);
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var ddate = date.getDate();
+		var day = date.getDay();
+		return year+'년 '+month+'월 '+ddate+'일 '+'일월화수목금토'.substr(day,1)+'요일';
+	}
+
+	var date = new Date(1426863600000);
+	console.log(formatDate(date)); // 출력 결과: 2015년 3월 21일 토요일
+
+
 	// 문제5: 생일을 입력하면 살아온 날짜를 숫자로 반환하는 함수 lifeTime()을 작성하라.
 	// 태어난 날을 1일로 센다.
 	// 사용예: console.log( lifeTime(1980, 2, 13) );
 	// 힌트: 테스트 할 때는 어제나 2일 전 등 가까운 날짜를 입력한 후 테스트 해보는 것이 편합니다.
+	function lifeTime (연,월,일) {
+		// body...
+
+		var birthDate = new Date(연,월-1,일);
+		var nowDate = new Date();
+		var 시간차 = nowDate.getTime()-birthDate.getTime();
+		return Math.ceil(시간차/1000/60/60/24);
+
+	}
+
+	console.log( lifeTime(1980, 2, 13) );
+	console.log( lifeTime(2015, 3, 25) );
 
 
 	// 문제6: 인수로 전달된 시각까지 앞으로 남은 시간을 "1시간 10분 35초"처럼 1초마다 카운트다운하며
@@ -42,6 +93,32 @@
 	// 힌트1: 문자열 표시는 console.log와 사용법이 똑같은 log() 함수를 사용해 출력하면 된다.
 	// 힌트2: countDown() 함수는 만들어두기만 하면 자동으로 실행된다.
 	// 사용예: countDown(2015, 3, 26, 13); // 3월 26일 오후 1시까지 남은 시간 표시
+
+	function countDown(연,월,일,시) {
+		// body...
+		
+		var endDate = new Date(연,월-1,일,시);
+		var nowDate = new Date();
+		
+		var num = endDate.getTime()-nowDate.getTime();
+		var 시간차 = new Date(num);
+
+		var Hours = 시간차.getHours()-9;
+		var Min = 시간차.getMinutes();
+		var Sec = 시간차.getSeconds();
+		//setTimeText(nowDate);
+		//setTimeout(arguments.callee,1000);
+
+		return Hours+'시 '+Min+'분 '+Sec+'초';
+
+
+	}
+
+	countDown(2015, 3, 25, 5); 
+
+
+
+
 
 	</script>
 </head>
