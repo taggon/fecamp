@@ -17,7 +17,7 @@ QUnit.test('답1 확인', function(assert){
 QUnit.test('답2 확인', function(assert){
 	assert.equal(typeof 정렬, 'function', '정렬() 함수를 선언해야 합니다.');
 	for (var i=0, num; i < 10; i++) {
-		num = 정렬(rand(0, 100), rand(0, 100));
+		num = 정렬(rand(1, 100), rand(1, 100));
 		assert.ok(Array.isArray(num), '정렬() 함수는 배열을 반환해야 합니다.');
 		assert.ok(num[0]<=num[1], '정렬() 함수에서 반환한 배열의 첫 번째 원소는 두 번째 원소보다 크지 않아야 합니다. 현재값: ['+num.join(',')+']');
 	}
@@ -25,15 +25,15 @@ QUnit.test('답2 확인', function(assert){
 QUnit.test('답3 확인', function(assert){
 	assert.equal(typeof 삼삼, 'function', '삼삼() 함수를 선언해야 합니다.');
 	for (var i=0, result, a, b, m; i < 10; i++) {
-		result = 삼삼(a=rand(0, 100), b=rand(0, 100));
+		result = 삼삼(a=rand(1, 100), b=rand(1, 100));
 		assert.ok(Array.isArray(result), '삼삼()은 배열을 반환해야 합니다.');
 		assert.deepEqual(result, m=th(a,b,[]), '전달된 인수: ('+a+','+b+'), 기대값:['+m.join(',')+'], 실제로 반환된 값:['+result.join(',')+']');
 	}
 	function th(a,b,r) {
 		var t=a;if(a>b){a=b;b=t}
 		for (var i=a+1; i < b; i++) {
-			if (i === a * 2) break;
 			if (i % 3 === 0) r.push(i);
+			if (i === a * 2) break;
 		}
 		return r;
 	}
