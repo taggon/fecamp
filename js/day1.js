@@ -41,14 +41,14 @@ var str1 = 'Hello', str2 = 'World', str3;
 // 자바스크립트에서는 어떤 값이든 문자열로 변환이 된다.
 // console.log( str1 + ',' + str2 + str3 ); // undefined
 //console.log( str1 + num1 );
-var 삼백 = 'a300';
+var 삼백 = '300';
 //console.log( 삼백 + num1 );
 
 // parseInt는 문자열 타입을 숫자 타입으로 변환.
 // 앞에서부터 확인해서 숫자인데까지만 변환.
 // 숫자가 아닌 값을 변환하면 NaN(Not a Number)이 나옴.
 var 숫자삼백 = parseInt(삼백);
-console.log(삼백 + 100);
+console.log(숫자삼백 + 100);
 console.log('나이:' + (10 + 2));
 console.log(숫자삼백 + 100);
 console.log(  isNaN(숫자삼백) );

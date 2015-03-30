@@ -12,9 +12,25 @@ arr.push('D');
 var 변수 = 1;
 function 함수(첫번째, 두번째) {
 	var 변수 = 2;
+    console.log(arguments[1]);
+    
 	console.log(window.변수);
 }
 함수();
+
+
+function arrayFush(arr){
+    argument[0].push();
+}
+/*var arr=[1, 2];
+arrayPush(arr, 3, 4, 5)
+arrayPush(arr, 3,  5)*/
+
+
+/* parameter(인자 : 미리 선언한 함수의 변수),
+argument(인수 : 실행될 때 전달된 변수 값)
+이 함수가 호출될 때 전달될 값 */
+
 
 var person = {
 	name : '김태곤',
@@ -80,11 +96,6 @@ function 오초뒤() {
 // "전역 함수라면" 함수 이름을 문자열로 전달할 수도 있다. (권장안함)
 //setTimeout('오초뒤()', 5000);
 //setTimeout(function(){ 오초뒤(); }, 5000);
-
-
-
-
-
 
 
 
