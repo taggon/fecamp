@@ -17,3 +17,17 @@ figure > img {
 figurecaption {
 	display: block;
 }
+
+p code {
+	color : #f00;
+}
+
+#box {
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+	border:1px solid #777;
+}
