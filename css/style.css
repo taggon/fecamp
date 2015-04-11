@@ -43,3 +43,13 @@ p code {
 	border:1px solid #ccc;
 	cursor:nwse-resize;
 }
+
+.top {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	text-decoration: none;
+	padding: 10px;
+	background-color: #339;
+	color: #fff;
+}
