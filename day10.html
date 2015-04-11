@@ -13,7 +13,7 @@
 	<h1>오늘 배울 내용</h1>
 
 	<button id="show">보이기</button>
-	<button id="hide">숨기기</button>
+	<button id="hide" disabled="">숨기기</button>
 	<button id="toggle">토글</button>
 
 	<div id="box" style="width:50px;height:50px;top:10px;left:200px">
@@ -82,6 +82,25 @@
 		<li><code>.replaceWith()</code>: 엘리먼트를 인수로 전달한 엘리먼트로 교체한다.</li>
 		<li><code>.clone()</code>: 엘리먼트를 복제한다.</li>
 	</ul>
+
+	<div id="tab">
+		<ul class="tabs">
+			<li class="active"><a href="#tab1">탭1</a></li>
+			<li><a href="#tab2">탭2</a></li>
+			<li><a href="#tab3">탭3</a></li>
+		</ul>
+		<div class="tab-container">
+			<div id="tab1" class="tab-panel active">
+				탭1 패널
+			</div>
+			<div id="tab2" class="tab-panel">
+				탭2 패널
+			</div>
+			<div id="tab3" class="tab-panel">
+				탭3 패널
+			</div>
+		</div>
+	</div>
 
 	<div id="container">
 		<!--
