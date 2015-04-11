@@ -70,6 +70,7 @@
 		<li><code>.attr()</code>: 엘리먼트의 속성을 가져오거나 설정한다.</li>
 		<li><code>.prop()</code>: 엘리먼트 객체의 프로퍼티를 가져오거나 설정한다.</li>
 		<li><code>.removeAttr()</code>: 인수로 전달한 이름의 속성을 제거한다.</li>
+		<li><code>.data()</code>: 엘리먼트 객체에 사용자 데이터를 저장해둔다.</li>
 		<li><code>.after()</code>: 엘리먼트 뒤에 인수로 전달한 엘리먼트를 추가한다.</li>
 		<li><code>.before()</code>: 엘리먼트 앞에 인수로 전달한 엘리먼트를 추가한다.</li>
 		<li><code>.insertAfter()</code>: 엘리먼트를 인수로 전달한 엘리먼트 뒤에 추가한다.</li>
@@ -81,6 +82,14 @@
 		<li><code>.replaceWith()</code>: 엘리먼트를 인수로 전달한 엘리먼트로 교체한다.</li>
 		<li><code>.clone()</code>: 엘리먼트를 복제한다.</li>
 	</ul>
+
+	<div id="container">
+		<!--
+		마우스를 올리면 이미지를 data-hover에 있는 값으로 교체하고
+		마우스를 떼면 다시 원래대로 복구한다.
+		-->
+		<img src="http://placehold.it/300x150" data-hover="https://placekitten.com/300/150">
+	</div>
 
 <script src="js/prism.js"></script>
 </body>
