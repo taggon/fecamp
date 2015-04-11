@@ -40,7 +40,7 @@
 
 	<h2>CSS 관련 함수</h2>
 	<ul>
-		<li><code>.css</code>: CSS 속성의 값을 가져오거나 설정한다. 설정한 CSS는 인라인 스타일로 추가된다.</li>
+		<li><code>.css()</code>: CSS 속성의 값을 가져오거나 설정한다. 설정한 CSS는 인라인 스타일로 추가된다.</li>
 		<li><code><a href="http://api.jquery.com/addClass/">.addClass()</a>/.removeClass()/.toggleClass()</code>: 클래스를 추가하거나 제거한다.</li>
 		<li><code><a href="http://api.jquery.com/hasClass/">.hasClass()</a></code>: 인수로 전달한 클래스가 설정되어 있는지 확인한다.</li>
 		<li><code>.width()/.height()</code>: 엘리먼트의 너비와 높이를 반환하거나 설정한다.</li>
@@ -49,6 +49,19 @@
 		<li><code>.offset()</code>: 엘리먼트의 위치를 가진 <code>object</code>를 반환한다. 이 객체에는 left, top 프로퍼티가 있는데 각각 전체 페이지의 왼쪽 끝과 위쪽 끝에서 멀어진 픽셀 거리를 나타낸다.</li>
 		<li><code>.position()</code>: 엘리먼트의 위치를 가진 <code>object</code>를 반환한다. 이 객체에는 left, top 프로퍼티가 있는데 각각 부모 오프셋 객체의 왼쪽 끝과 위쪽 끝에서 멀어진 픽셀 거리를 나타낸다.</li>
 		<li><code>.scrollLeft()/.scrollTop()</code>: 엘리먼트 내부의 스크롤 위치를 설정하거나 반환한다.</li>
+	</ul>
+
+	<h2>DOM 탐색 함수</h2>
+	<ul>
+		<li><code>.find()</code>: 엘리먼트 내부에서 인수로 전달한 선택자에 해당하는 자손 엘리먼트를 찾는다.</li>
+		<li><code>.parent()</code>: 부모 엘리먼트를 찾는다.</li>
+		<li><code>.closest()</code>: 선택자에 일치하는 가장 가까운 자신 및 조상 엘리먼트를 찾는다.</li>
+		<li><code>.children()</code>: 자식 엘리먼트를 찾는다.</li>
+		<li><code>.next()</code>: 바로 다음 형제 엘리먼트를 찾는다.</li>
+		<li><code>.nextAll()</code>: 다음 형제 엘리먼트를 모두 찾는다.</li>
+		<li><code>.prev()</code>: 바로 앞 형제 엘리먼트를 찾는다.</li>
+		<li><code>.prevAll()</code>: 앞 형제 엘리먼트를 모두 찾는다.</li>
+		<li><code>.siblings()</code>: 형제 엘리먼트를 모두 찾는다.</li>
 	</ul>
 
 <script src="js/prism.js"></script>
