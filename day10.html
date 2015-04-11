@@ -12,6 +12,10 @@
 <body>
 	<h1>오늘 배울 내용</h1>
 
+	<button id="show">보이기</button>
+	<button id="hide">숨기기</button>
+	<button id="toggle">토글</button>
+
 	<div id="box" style="width:50px;height:50px;top:10px;left:200px">
 		<span class="size-handle"></span>
 	</div>
@@ -22,6 +26,7 @@
 	<p>jQuery에서 이벤트를 추가하거나 제거할 때는 <code>.on()</code> 또는 <code>.off()</code> 함수를 사용한다. 임의로 마치 사용자가 이벤트를 발생시킨 것처럼 이벤트를 실행할 때는 <code>.trigger()</code> 함수를 사용한다. 앞서 배운 내용은 <a href="day9.html">9일차 강의</a>를 참고하세요.</p>
 
 	<h2>애니메이션 관련 함수</h2>
+	<button type="button" id="cloneItem">리스트 복제</button>
 	<ul>
 		<li><code>.show()/.hide()/.toggle()</code>: 대각선으로 펼쳐지며 나타나거나 접히며 사라진다. 시간을 뜻하는 인수가 없으면 <code>display</code> 속성을 <code>none</code> 또는 그 밖의 값으로 설정한다.</li>
 		<li><code>.fadeIn()/.fadeOut()/.fadeToggle()</code>: 페이드 인/아웃 효과</li>
