@@ -52,7 +52,8 @@
 	<script>jQuery.noConflict();</script>
 	<script>
 	jQuery(function($){
-		var $stream = $('ul.stream'), $items = $stream.find('>li');
+		var $stream = $('ul.stream'), $tpl = $stream.find('>li').remove();
+		var tpl = $stream.find('>script[type="template"]').html();
 		var data = {
 			items : [
 				{id: 1, name: '아이템 #1', image: 'http://lorempixel.com/292/292/cats', price: '12100'}
@@ -70,8 +71,6 @@
 			data.items.push(item);
 		}
 
-		console.log(data);
-
 		/*
 		 * 아래에 과제 코드를 입력합니다.
 		 * 본 과제는 목요일 수업 시간에 풀이 할 예정이므로 목요일 수업 전에
@@ -83,13 +82,36 @@
 		/*
 		 * TODO: 문서가 스크롤 될 때
 		 */
-		$(window).on('scroll', function(event){
-			var scrollTop = $(window).scrollTop();
+		var page = 1, itemsPerPage = 12;
+		var $win = $(window), $doc = $(document);
 
-			if ($(document).height() - scrollTop - $(window).height() < 100) {
-				$items.clone().fadeIn(1000).appendTo($stream);
+		$win.on('scroll', function(event){
+			var scrollTop = $win.scrollTop(), currentData, start, end;
+
+			start = ( page - 1 ) * itemsPerPage;
+			end = start + itemsPerPage;
+			currentData = data.items.slice(start, end);
+
+			if ($doc.height() - scrollTop - $win.height() < 100) {
+				for (var i=0; i < currentData.length; i++) {
+					$tpl.clone()
+						.find('img').attr('src', currentData[i].image).end()
+						.find('.title').text(currentData[i].name).end()
+						.find('.price').text(currentData[i].price+'원').end()
+						.appendTo($stream);
+					/*
+					문자열로 사용하는 방법
+					var html = tpl.replace(/%(\w+)%/g, function($0,$1){
+						return currentData[i][$1] || '';
+					});
+
+					$(html).appendTo($stream);
+					*/
+				}
+				page += 1;
 			}
 		});
+		$win.trigger('scroll');
 
 		// TODO: window의 스크롤 위치를 확인하여
 
@@ -107,11 +129,21 @@
 	<h1>무한 스크롤</h1>
 	<p>웹 페이지를 스크롤하면 아래쪽에 계속 컨텐츠가 추가되는 무한 스크롤 스크립트를 작성하세요. 실제 사용예는 <a href="https://youtu.be/z6doeEVHb_I">Youtube 동영상</a>을 참고하세요.</p>
 	<ul class="stream">
+		<script type="template">
 		<li>
 			<a href="#">
-				<img src="http://lorempixel.com/292/292/cats">
-				<strong class="title">아이템 #1</strong>
-				<em class="price">12,100원</em>
+				<img src="%image%">
+				<strong class="title">%name%</strong>
+				<em class="price">%price%원</em>
+			</a>
+		</li>
+		</script>
+
+		<li>
+			<a href="#">
+				<img src="#">
+				<strong class="title"></strong>
+				<em class="price"></em>
 			</a>
 		</li>
 	</ul>
